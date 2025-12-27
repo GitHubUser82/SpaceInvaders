@@ -3,6 +3,8 @@
 //
 
 #include "MainFrame.h"
+#include "OpenGLFrame.h"
+
 
 MainFrame::MainFrame()
     : wxFrame(nullptr, wxID_ANY, "Hello World")
@@ -52,12 +54,6 @@ void MainFrame::OnHello(wxCommandEvent&)
 
 void MainFrame::OnNew(wxCommandEvent&)
 {
-    auto* frame = new wxFrame(
-        nullptr,
-        wxID_ANY,
-        "New Frame",
-        wxDefaultPosition,
-        wxSize(400, 300)
-    );
-    frame->Show(true);
+    auto* glFrame = new OpenGLFrame(this);
+    glFrame->Show(true);
 }
